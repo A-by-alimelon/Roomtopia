@@ -8,17 +8,17 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.isNavigationBarHidden = false
-        navigationController?.navigationBar.shadowImage = UIImage()
+        let img = UIImage(named: "test")
+        navigationController?.navigationBar.setBackgroundImage(img, for: .default)
     }
-
-
+    
+    
 }
 
