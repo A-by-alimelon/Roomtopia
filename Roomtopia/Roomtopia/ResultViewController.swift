@@ -8,13 +8,14 @@
 import UIKit
 
 class ResultViewController: UIViewController {
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        navigationItem.setHidesBackButton(true, animated: false)
+       // navigationItem.setHidesBackButton(true, animated: false)
     }
 
 }

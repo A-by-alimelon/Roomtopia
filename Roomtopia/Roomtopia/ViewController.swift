@@ -10,7 +10,7 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var surveyTableView: UITableView!
-    let items = [Question("당신은 아싸인가"), Question("여행을 온 당신은 사진을 찍어 sns에 글을 올린다. "),Question("약속이 있는 다음날 당신은 집에 있고 싶으니 쉰다."), Question("맛집을 찾아간 당신은 생각보다 비싼 가격에 놀라 저렴한 다른 곳으로 간다."), Question("나의 문화생활을 위해서 돈을 쓰는게 아깝지 않다."), Question("방에 사람들이 가득찬 경우, 방의 중앙보다는 벽 가까이에 자리합니다."), Question("방에 사람들이 가득찬 경우, 방의 중앙보다는 벽 가까이에 자리합니다."), Question("방에 사람들이 가득찬 경우, 방의 중앙보다는 벽 가까이에 자리합니다."), Question("방에 사람들이 가득찬 경우, 방의 중앙보다는 벽 가까이에 자리합니다."), Question("방에 사람들이 가득찬 경우, 방의 중앙보다는 벽 가까이에 자리합니다."), Question("방에 사람들이 가득찬 경우, 방의 중앙보다는 벽 가까이에 자리합니다.")]
+    let items = [Question("한 번 사는 인생, 재밌게 살고 싶다."), Question("나는 여행을 가면 사진을 꼭 찍어 sns에 글을 올린다."),Question("나는 인싸다."), Question("나는 문화생활을 위해 쓰는 돈이 별로 아깝지 않다."), Question("나는 약속이 있는 다음 날 집에서 쉰다."), Question(" 나는 낯선 사람들과 있어도 금방 잘 어울린다."), Question("시험기간에 나는 친구들과 모여서 함께 공부한다."), Question("간짜장을 시켰는데 일반 짜장이 배달오자 배달원에게 다시 가져가 달라고 한다."), Question("맛집을 찾아간 나는 비싼 가격에 놀라 다른 가게로 간다."), Question(" 나는 계획이 없는 편이다."), ]
     
     
     override func viewDidLoad() {
@@ -33,7 +33,7 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        let img = UIImage(named: "대지5")
+        let img = UIImage(named: "대지6")
 
         navigationController?.navigationBar.setBackgroundImage(img, for: .default)
         
@@ -66,6 +66,11 @@ class ViewController: UIViewController {
     @objc func tapButton() {
         guard let pushVC = storyboard?.instantiateViewController(identifier: "ResultViewController") else { return }
         
+        var scores = [Int]()
+        items.forEach {
+            scores.append(5 - $0.answer + 1)
+        }
+        print(scores)
         navigationController?.pushViewController(pushVC, animated: true)
     }
     
@@ -80,7 +85,7 @@ extension ViewController: UITableViewDelegate {
 
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
+        return items.count + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -93,7 +98,6 @@ extension ViewController: UITableViewDataSource {
         let question = items[indexPath.row - 1]
         
         cell.configureQuestionLabel(text: question.text)
-        print("question.answer: \(question.answer)")
         cell.configureButtons(score: question.answer)
         
         return cell
