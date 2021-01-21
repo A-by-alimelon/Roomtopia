@@ -35,6 +35,9 @@ class ViewController: UIViewController {
     
     @objc func tapButton() {
         print("다음")
+        guard let pushVC = storyboard?.instantiateViewController(identifier: "ResultViewController") else { return }
+        
+        navigationController?.pushViewController(pushVC, animated: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {

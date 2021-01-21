@@ -177,10 +177,10 @@
             </objects>
             <point key="canvasLocation" x="939.13043478260875" y="71.651785714285708"/>
         </scene>
-        <!--View Controller-->
+        <!--Result View Controller-->
         <scene sceneID="vaW-dY-vt1">
             <objects>
-                <viewController id="HS8-SW-PTe" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ResultViewController" id="HS8-SW-PTe" customClass="ResultViewController" customModule="Roomtopia" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BCV-pL-4TP">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
