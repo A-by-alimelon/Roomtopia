@@ -20,8 +20,9 @@ class ViewController: UIViewController, UITableViewDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        let img = UIImage(named: "test")
+        let img = UIImage(named: "로고")
         navigationController?.navigationBar.setBackgroundImage(img, for: .default)
+    
     }
     
 }
@@ -35,6 +36,7 @@ extension ViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "QuestionCell", for: indexPath) as? QuestionCell else { return UITableViewCell() }
     
         cell.configureQuestionLabel(text: items[indexPath.row].text)
+//        cell.configureAnswerButtom()
         
         return cell
     }
