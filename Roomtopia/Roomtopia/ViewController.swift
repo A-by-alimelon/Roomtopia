@@ -10,7 +10,7 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var surveyTableView: UITableView!
-    let items = [Question("방에 사람들이 첫번째 가득찬 경우, 방의 중앙보다는 벽 가까이에 자리합니다."), Question("방에 사람들이 가득찬 경우, 방의 중앙보다는 벽 가까이에 자리합니다."),Question("방에 사람들이 가득찬 경우, 방의 중앙보다는 벽 가까이에 자리합니다."), Question("방에 사람들이 가득찬 경우, 방의 중앙보다는 벽 가까이에 자리합니다."), Question("방에 사람들이 가득찬 경우, 방의 중앙보다는 벽 가까이에 자리합니다."), Question("방에 사람들이 가득찬 경우, 방의 중앙보다는 벽 가까이에 자리합니다."), Question("방에 사람들이 가득찬 경우, 방의 중앙보다는 벽 가까이에 자리합니다."), Question("방에 사람들이 가득찬 경우, 방의 중앙보다는 벽 가까이에 자리합니다."), Question("방에 사람들이 가득찬 경우, 방의 중앙보다는 벽 가까이에 자리합니다."), Question("방에 사람들이 가득찬 경우, 방의 중앙보다는 벽 가까이에 자리합니다."), Question("방에 사람들이 가득찬 경우, 방의 중앙보다는 벽 가까이에 자리합니다.")]
+    let items = [Question("당신은 아싸인가"), Question("여행을 온 당신은 사진을 찍어 sns에 글을 올린다. "),Question("약속이 있는 다음날 당신은 집에 있고 싶으니 쉰다."), Question("맛집을 찾아간 당신은 생각보다 비싼 가격에 놀라 저렴한 다른 곳으로 간다."), Question("나의 문화생활을 위해서 돈을 쓰는게 아깝지 않다."), Question("방에 사람들이 가득찬 경우, 방의 중앙보다는 벽 가까이에 자리합니다."), Question("방에 사람들이 가득찬 경우, 방의 중앙보다는 벽 가까이에 자리합니다."), Question("방에 사람들이 가득찬 경우, 방의 중앙보다는 벽 가까이에 자리합니다."), Question("방에 사람들이 가득찬 경우, 방의 중앙보다는 벽 가까이에 자리합니다."), Question("방에 사람들이 가득찬 경우, 방의 중앙보다는 벽 가까이에 자리합니다."), Question("방에 사람들이 가득찬 경우, 방의 중앙보다는 벽 가까이에 자리합니다.")]
     
     
     override func viewDidLoad() {
@@ -20,13 +20,15 @@ class ViewController: UIViewController {
         surveyTableView.allowsSelection = false
         configureFooter()
     }
-   
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        let img = UIImage(named: "로고")
+        let img = UIImage(named: "대지5")
+
         navigationController?.navigationBar.setBackgroundImage(img, for: .default)
-    
+        
+        
     }
     
     func configureFooter() {
@@ -36,7 +38,7 @@ class ViewController: UIViewController {
         resultImageView.isUserInteractionEnabled = true
         resultImageView.contentMode = .scaleAspectFill
         resultImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapButton)))
-
+        
         footer.addSubview(resultImageView)
         
         surveyTableView.sectionFooterHeight = 50
@@ -63,8 +65,8 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: UITableViewDelegate {
-
-
+    
+    
 }
 
 extension ViewController: UITableViewDataSource {
@@ -79,7 +81,7 @@ extension ViewController: UITableViewDataSource {
             return firstCell
         }
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "QuestionCell", for: indexPath) as? QuestionCell else { return UITableViewCell() }
-    
+        
         cell.configureQuestionLabel(text: items[indexPath.row - 1].text)
         cell.configureButtons()
         

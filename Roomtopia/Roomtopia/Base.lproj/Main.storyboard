@@ -143,7 +143,7 @@
                                     <constraint firstItem="pUP-or-gzP" firstAttribute="leading" secondItem="Sng-WP-lOb" secondAttribute="leading" constant="20" symbolic="YES" id="KUS-SY-v6a"/>
                                 </constraints>
                             </view>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="leV-g5-htL">
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="leV-g5-htL">
                                 <rect key="frame" x="55" y="778" width="311" height="4"/>
                                 <color key="progressTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </progressView>
