@@ -17,9 +17,6 @@ class ViewController: UIViewController {
     
     var count = 0 {
         didSet {
-            if count == 10 {
-                print("다해")
-            }
             progress.completedUnitCount = Int64(count)
             progressView.setProgress(Float(progress.fractionCompleted), animated: true)
             progressLabel.text = "\(count*10)%"
@@ -41,6 +38,11 @@ class ViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(changeQuestionAnswer), name: .changeAnswer, object: nil)
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     
     @objc func changeQuestionAnswer(_ notification: Notification) {
         guard let getValue = notification.object as? [Any] else { return }
@@ -55,7 +57,7 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        let img = UIImage(named: "대지나")
+        let img = UIImage(named: "대지6")
 
         navigationController?.navigationBar.setBackgroundImage(img, for: .default)
         
@@ -71,11 +73,11 @@ class ViewController: UIViewController {
         
         footer.addSubview(resultImageView)
         
-        surveyTableView.sectionFooterHeight = 50
+        surveyTableView.sectionFooterHeight = 70
         
         resultImageView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            resultImageView.topAnchor.constraint(equalTo: footer.topAnchor, constant: 8),
+            resultImageView.topAnchor.constraint(equalTo: footer.topAnchor, constant: 24),
             resultImageView.centerXAnchor.constraint(equalTo: footer.centerXAnchor),
             resultImageView.heightAnchor.constraint(equalToConstant: 50),
             resultImageView.widthAnchor.constraint(equalToConstant: 160)
