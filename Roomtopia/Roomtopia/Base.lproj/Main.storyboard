@@ -29,6 +29,26 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NL3-oZ-gw3" id="cH9-1W-NmZ">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="154"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="방에 사람들이 가득찬 경우, 방의 중앙보다는 벽 가까이에 자리합니다. " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wOc-XZ-rp2">
+                                                    <rect key="frame" x="28" y="27" width="358" height="50.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Ud-CN-swc">
+                                                    <rect key="frame" x="28" y="86" width="358" height="57"/>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="wOc-XZ-rp2" firstAttribute="top" secondItem="cH9-1W-NmZ" secondAttribute="topMargin" constant="16" id="7hP-jQ-vHK"/>
+                                                <constraint firstItem="wOc-XZ-rp2" firstAttribute="leading" secondItem="cH9-1W-NmZ" secondAttribute="leadingMargin" constant="8" id="AGw-rJ-XN9"/>
+                                                <constraint firstItem="0Ud-CN-swc" firstAttribute="bottom" secondItem="cH9-1W-NmZ" secondAttribute="bottomMargin" id="BfA-bB-fod"/>
+                                                <constraint firstItem="0Ud-CN-swc" firstAttribute="leading" secondItem="cH9-1W-NmZ" secondAttribute="leadingMargin" constant="8" id="dUs-1I-uPN"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="wOc-XZ-rp2" secondAttribute="trailing" constant="8" id="ihA-K0-mLk"/>
+                                                <constraint firstItem="0Ud-CN-swc" firstAttribute="top" secondItem="wOc-XZ-rp2" secondAttribute="bottom" constant="8.5" id="mUp-eH-QeF"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="0Ud-CN-swc" secondAttribute="trailing" constant="8" id="nDx-lg-os4"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
