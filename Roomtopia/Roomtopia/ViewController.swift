@@ -20,12 +20,11 @@ class ViewController: UIViewController {
             progress.completedUnitCount = Int64(count)
             progressView.setProgress(Float(progress.fractionCompleted), animated: true)
             progressLabel.text = "\(count*10)%"
+            resultImageView.image = UIImage(named: "결과")
         }
     }
     let progress = Progress(totalUnitCount: 10)
-    
-    
-    
+    let resultImageView = UIImageView(image: UIImage(named: "비활성버튼"))
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,7 +65,7 @@ class ViewController: UIViewController {
     func configureFooter() {
         let footer = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 100))
         
-        let resultImageView = UIImageView(image: UIImage(named: "결과"))
+        
         resultImageView.isUserInteractionEnabled = true
         resultImageView.contentMode = .scaleAspectFill
         resultImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapButton)))
@@ -88,6 +87,7 @@ class ViewController: UIViewController {
     
     @objc func tapButton() {
         if count == 10 {
+            
             guard let pushVC = storyboard?.instantiateViewController(identifier: "ResultViewController") else { return }
             
             var scores = [Int]()
@@ -96,8 +96,6 @@ class ViewController: UIViewController {
             }
             print(scores)
             navigationController?.pushViewController(pushVC, animated: true)
-        } else {
-            
         }
         
     }
