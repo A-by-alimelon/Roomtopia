@@ -9,14 +9,9 @@ import Foundation
 
 class Question {
     var text: String = ""
-    var answer: Answer?
+    var answer: Int = 0
     
     init(_ text: String) {
         self.text = text
     }
-}
-
-
-enum Answer: Int {
-    case veryYes = 5, yes = 4, normal = 3, no = 2, veryNo = 1
 }
