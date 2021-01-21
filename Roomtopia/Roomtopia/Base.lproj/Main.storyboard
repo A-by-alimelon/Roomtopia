@@ -132,16 +132,13 @@
                                 <rect key="frame" x="0.0" y="754" width="390" height="90"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pUP-or-gzP">
-                                        <rect key="frame" x="20" y="16.333333333333371" width="24" height="19.333333333333329"/>
+                                        <rect key="frame" x="21" y="16.333333333333371" width="24" height="19.333333333333329"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="pUP-or-gzP" firstAttribute="leading" secondItem="Sng-WP-lOb" secondAttribute="leading" constant="20" symbolic="YES" id="KUS-SY-v6a"/>
-                                </constraints>
                             </view>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="leV-g5-htL">
                                 <rect key="frame" x="55" y="778" width="311" height="4"/>
@@ -164,12 +161,14 @@
                             <constraint firstItem="YCw-Sh-Qg2" firstAttribute="top" secondItem="NI1-zQ-uic" secondAttribute="bottom" id="hjh-Jr-j2M"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="leV-g5-htL" secondAttribute="bottom" constant="28" id="l5Q-Cv-ziQ"/>
                             <constraint firstItem="Sng-WP-lOb" firstAttribute="top" secondItem="YCw-Sh-Qg2" secondAttribute="bottom" id="rLb-ZC-MT4"/>
+                            <constraint firstItem="pUP-or-gzP" firstAttribute="trailing" secondItem="leV-g5-htL" secondAttribute="leading" constant="-10" id="vix-wU-uOY"/>
                             <constraint firstItem="leV-g5-htL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="55" id="yKl-JX-sPP"/>
                             <constraint firstItem="NI1-zQ-uic" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-35" id="zWF-dU-DMS"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="DTp-dJ-QU8"/>
                     <connections>
+                        <outlet property="progressLabel" destination="pUP-or-gzP" id="BvD-vJ-tXj"/>
                         <outlet property="progressView" destination="leV-g5-htL" id="3cL-Pj-PRx"/>
                         <outlet property="surveyTableView" destination="YCw-Sh-Qg2" id="vl2-Fg-hiP"/>
                     </connections>
