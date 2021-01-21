@@ -10,7 +10,7 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate {
     
     @IBOutlet weak var surveyTableView: UITableView!
-    let items = [Question("방에 사람들이 가득찬 경우, 방의 중앙보다는 벽 가까이에 자리합니다. ")]
+    let items = [Question("방에 사람들이 가득찬 경우, 방의 중앙보다는 벽 가까이에 자리합니다."), Question("방에 사람들이 가득찬 경우, 방의 중앙보다는 벽 가까이에 자리합니다."),Question("방에 사람들이 가득찬 경우, 방의 중앙보다는 벽 가까이에 자리합니다.")]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +32,11 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "QuestionCell", for: indexPath) as? QuestionCell else { return UITableViewCell() }
+    
+        cell.configureQuestionLabel(text: items[indexPath.row].text)
+        
+        return cell
     }
     
     

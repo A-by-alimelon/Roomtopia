@@ -11,5 +11,9 @@ class QuestionCell: UITableViewCell {
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var answerStackView: UIStackView!
     
+    func configureQuestionLabel(text: String) {
+        questionLabel.numberOfLines = 0
+        questionLabel.text = text
+    }
   
 }

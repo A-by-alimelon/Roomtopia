@@ -23,7 +23,7 @@
                                 <rect key="frame" x="0.0" y="97" width="414" height="765"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="154" id="NL3-oZ-gw3" customClass="QuestionCell" customModule="Roomtopia" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="QuestionCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="QuestionCell" rowHeight="154" id="NL3-oZ-gw3" customClass="QuestionCell" customModule="Roomtopia" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="154"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NL3-oZ-gw3" id="cH9-1W-NmZ">
@@ -31,17 +31,20 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wOc-XZ-rp2" userLabel="QuestionLabel">
-                                                    <rect key="frame" x="28" y="27" width="358" height="0.0"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                    <rect key="frame" x="28" y="19" width="358" height="45"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="45" id="HaI-Y5-ard"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Ud-CN-swc">
-                                                    <rect key="frame" x="28" y="35.5" width="358" height="107.5"/>
+                                                    <rect key="frame" x="28" y="72.5" width="358" height="70.5"/>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="wOc-XZ-rp2" firstAttribute="top" secondItem="cH9-1W-NmZ" secondAttribute="topMargin" constant="16" id="7hP-jQ-vHK"/>
+                                                <constraint firstItem="wOc-XZ-rp2" firstAttribute="top" secondItem="cH9-1W-NmZ" secondAttribute="topMargin" constant="8" id="7hP-jQ-vHK"/>
                                                 <constraint firstItem="wOc-XZ-rp2" firstAttribute="leading" secondItem="cH9-1W-NmZ" secondAttribute="leadingMargin" constant="8" id="AGw-rJ-XN9"/>
                                                 <constraint firstItem="0Ud-CN-swc" firstAttribute="bottom" secondItem="cH9-1W-NmZ" secondAttribute="bottomMargin" id="BfA-bB-fod"/>
                                                 <constraint firstItem="0Ud-CN-swc" firstAttribute="leading" secondItem="cH9-1W-NmZ" secondAttribute="leadingMargin" constant="8" id="dUs-1I-uPN"/>
