@@ -20,7 +20,10 @@ class ViewController: UIViewController {
             progress.completedUnitCount = Int64(count)
             progressView.setProgress(Float(progress.fractionCompleted), animated: true)
             progressLabel.text = "\(count*10)%"
-            resultImageView.image = UIImage(named: "결과")
+            if count == 10 {
+                resultImageView.image = UIImage(named: "결과")
+            }
+            
         }
     }
     let progress = Progress(totalUnitCount: 10)
