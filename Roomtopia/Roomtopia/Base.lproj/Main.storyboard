@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="53" width="414" height="44"/>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YCw-Sh-Qg2">
-                                <rect key="frame" x="0.0" y="97" width="414" height="765"/>
+                                <rect key="frame" x="0.0" y="97" width="414" height="709"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="QuestionCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="QuestionCell" rowHeight="198" id="NL3-oZ-gw3" customClass="QuestionCell" customModule="Roomtopia" customModuleProvider="target">
@@ -111,16 +111,43 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sng-WP-lOb">
+                                <rect key="frame" x="0.0" y="806" width="414" height="90"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pUP-or-gzP">
+                                        <rect key="frame" x="20" y="16.5" width="24" height="19.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="pUP-or-gzP" firstAttribute="leading" secondItem="Sng-WP-lOb" secondAttribute="leading" constant="20" symbolic="YES" id="KUS-SY-v6a"/>
+                                </constraints>
+                            </view>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="leV-g5-htL">
+                                <rect key="frame" x="55" y="830" width="335" height="4"/>
+                                <color key="progressTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </progressView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Sng-WP-lOb" secondAttribute="trailing" id="4nZ-N3-7hI"/>
                             <constraint firstItem="NI1-zQ-uic" firstAttribute="trailing" secondItem="YCw-Sh-Qg2" secondAttribute="trailing" id="5J0-pc-gRr"/>
+                            <constraint firstAttribute="bottom" secondItem="Sng-WP-lOb" secondAttribute="bottom" id="6Ox-Tf-54m"/>
+                            <constraint firstItem="Sng-WP-lOb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="6ST-f6-uzn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="leV-g5-htL" secondAttribute="trailing" constant="24" id="J8c-sa-cUG"/>
+                            <constraint firstItem="pUP-or-gzP" firstAttribute="centerY" secondItem="leV-g5-htL" secondAttribute="centerY" id="Pyc-ta-fGF"/>
+                            <constraint firstItem="leV-g5-htL" firstAttribute="top" secondItem="YCw-Sh-Qg2" secondAttribute="bottom" constant="24" id="QGt-ds-Lre"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YCw-Sh-Qg2" secondAttribute="trailing" id="YvR-hZ-ugZ"/>
                             <constraint firstItem="NI1-zQ-uic" firstAttribute="leading" secondItem="YCw-Sh-Qg2" secondAttribute="leading" id="fr9-R0-STC"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="YCw-Sh-Qg2" secondAttribute="bottom" id="g8Q-eT-H9p"/>
                             <constraint firstItem="YCw-Sh-Qg2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hSN-sC-TCt"/>
                             <constraint firstItem="YCw-Sh-Qg2" firstAttribute="top" secondItem="NI1-zQ-uic" secondAttribute="bottom" id="hjh-Jr-j2M"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="leV-g5-htL" secondAttribute="bottom" constant="28" id="l5Q-Cv-ziQ"/>
+                            <constraint firstItem="Sng-WP-lOb" firstAttribute="top" secondItem="YCw-Sh-Qg2" secondAttribute="bottom" id="rLb-ZC-MT4"/>
+                            <constraint firstItem="leV-g5-htL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="55" id="yKl-JX-sPP"/>
                             <constraint firstItem="NI1-zQ-uic" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-35" id="zWF-dU-DMS"/>
                         </constraints>
                     </view>
