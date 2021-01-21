@@ -26,7 +26,11 @@ class QuestionCell: UITableViewCell {
     }
     
     @objc func buttonTapped(button: UIButton) {
+        answerButtons.forEach {
+            $0.isSelected = false
+        }
         button.isSelected = !button.isSelected
+        
     }
 
 }
