@@ -18,27 +18,9 @@ class ViewController: UIViewController {
         surveyTableView.delegate = self
         surveyTableView.dataSource = self
         surveyTableView.allowsSelection = false
-        surveyTableView.register(CustomHeader.self, forHeaderFooterViewReuseIdentifier: "sectionHeader")
-        surveyTableView.sectionFooterHeight = 50
-        let footer = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 100))
-        let footerButton = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 50))
-        footerButton.backgroundColor = .blue
-        footerButton.addTarget(self, action: #selector(tapButton), for: .touchUpInside)
-        footer.addSubview(footerButton)
-        footerButton.translatesAutoresizingMaskIntoConstraints = false
-        footerButton.topAnchor.constraint(equalTo: footer.topAnchor, constant: 8).isActive = true
-        footerButton.centerXAnchor.constraint(equalTo: footer.centerXAnchor).isActive = true
-        footerButton.setTitle("다음", for: .normal)
-        
-        surveyTableView.tableFooterView = footer
+        configureFooter()
     }
-    
-    @objc func tapButton() {
-        print("다음")
-        guard let pushVC = storyboard?.instantiateViewController(identifier: "ResultViewController") else { return }
-        
-        navigationController?.pushViewController(pushVC, animated: true)
-    }
+   
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -46,6 +28,37 @@ class ViewController: UIViewController {
         navigationController?.navigationBar.setBackgroundImage(img, for: .default)
     
     }
+    
+    func configureFooter() {
+        let footer = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 100))
+        
+        let resultImageView = UIImageView(image: UIImage(named: "결과"))
+        resultImageView.isUserInteractionEnabled = true
+        resultImageView.contentMode = .scaleAspectFill
+        resultImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapButton)))
+
+        footer.addSubview(resultImageView)
+        
+        surveyTableView.sectionFooterHeight = 50
+        
+        resultImageView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            resultImageView.topAnchor.constraint(equalTo: footer.topAnchor, constant: 8),
+            resultImageView.centerXAnchor.constraint(equalTo: footer.centerXAnchor),
+            resultImageView.heightAnchor.constraint(equalToConstant: 50),
+            resultImageView.widthAnchor.constraint(equalToConstant: 160)
+        ])
+        
+        surveyTableView.tableFooterView = footer
+    }
+    
+    @objc func tapButton() {
+        guard let pushVC = storyboard?.instantiateViewController(identifier: "ResultViewController") else { return }
+        
+        navigationController?.pushViewController(pushVC, animated: true)
+    }
+    
+    
     
 }
 
