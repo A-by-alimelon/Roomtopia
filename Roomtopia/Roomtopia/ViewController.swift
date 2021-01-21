@@ -10,7 +10,19 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var surveyTableView: UITableView!
-    let items = [Question("한 번 사는 인생, 재밌게 살고 싶다."), Question("나는 여행을 가면 사진을 꼭 찍어 sns에 글을 올린다."),Question("나는 인싸다."), Question("나는 문화생활을 위해 쓰는 돈이 별로 아깝지 않다."), Question("나는 약속이 있는 다음 날 집에서 쉰다."), Question(" 나는 낯선 사람들과 있어도 금방 잘 어울린다."), Question("시험기간에 나는 친구들과 모여서 함께 공부한다."), Question("간짜장을 시켰는데 일반 짜장이 배달오자 배달원에게 다시 가져가 달라고 한다."), Question("맛집을 찾아간 나는 비싼 가격에 놀라 다른 가게로 간다."), Question(" 나는 계획이 없는 편이다."), ]
+    @IBOutlet weak var progressView: UIProgressView!
+    
+    let items = [Question("한 번 사는 인생, 재밌게 살고 싶다."), Question("나는 여행을 가면 사진을 꼭 찍어 sns에 글을 올린다."),Question("나는 인싸다."), Question("나는 문화생활을 위해 쓰는 돈이 별로 아깝지 않다."), Question("나는 약속이 있는 다음 날 집에서 쉰다."), Question(" 나는 낯선 사람들과 있어도 금방 잘 어울린다."), Question("시험기간에 나는 친구들과 모여서 함께 공부한다."), Question("간짜장을 시켰는데 일반 짜장이 배달오자 배달원에게 다시 가져가 달라고 한다."), Question("맛집을 찾아간 나는 비싼 가격에 놀라 다른 가게로 간다."), Question("나는 계획이 없는 편이다.")]
+    
+    var count = 0 {
+        didSet {
+            if count == 10 {
+                print("다해")
+            }
+        }
+    }
+    
+    
     
     
     override func viewDidLoad() {
@@ -28,15 +40,18 @@ class ViewController: UIViewController {
         guard let getValue = notification.object as? [Any] else { return }
         let indexPath = getValue[0] as! IndexPath, score = getValue[1] as! Int
         
+        if items[indexPath.row - 1].answer == 0 {
+            count += 1
+        }
+        
         items[indexPath.row - 1].answer = score
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        let img = UIImage(named: "대지6")
+        let img = UIImage(named: "대지나")
 
         navigationController?.navigationBar.setBackgroundImage(img, for: .default)
-        
         
     }
     
@@ -64,17 +79,20 @@ class ViewController: UIViewController {
     }
     
     @objc func tapButton() {
-        guard let pushVC = storyboard?.instantiateViewController(identifier: "ResultViewController") else { return }
-        
-        var scores = [Int]()
-        items.forEach {
-            scores.append(5 - $0.answer + 1)
+        if count == 10 {
+            guard let pushVC = storyboard?.instantiateViewController(identifier: "ResultViewController") else { return }
+            
+            var scores = [Int]()
+            items.forEach {
+                scores.append(5 - $0.answer + 1)
+            }
+            print(scores)
+            navigationController?.pushViewController(pushVC, animated: true)
+        } else {
+            
         }
-        print(scores)
-        navigationController?.pushViewController(pushVC, animated: true)
+        
     }
-    
-    
     
 }
 

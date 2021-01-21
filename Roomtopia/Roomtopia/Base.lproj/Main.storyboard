@@ -170,6 +170,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="DTp-dJ-QU8"/>
                     <connections>
+                        <outlet property="progressView" destination="leV-g5-htL" id="3cL-Pj-PRx"/>
                         <outlet property="surveyTableView" destination="YCw-Sh-Qg2" id="vl2-Fg-hiP"/>
                     </connections>
                 </viewController>

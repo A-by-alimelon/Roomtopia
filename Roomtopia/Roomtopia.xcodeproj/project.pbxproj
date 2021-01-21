@@ -66,12 +66,12 @@
 		FA05E98025B93B0F00428637 /* Roomtopia */ = {
 			isa = PBXGroup;
 			children = (
+				FA05E98725B93B0F00428637 /* Main.storyboard */,
 				FA05E98125B93B0F00428637 /* AppDelegate.swift */,
 				FA05E98325B93B0F00428637 /* SceneDelegate.swift */,
 				FA05E98525B93B0F00428637 /* ViewController.swift */,
 				FA05E99A25B9520D00428637 /* QuestionCell.swift */,
 				FA05E99725B940DA00428637 /* Question.swift */,
-				FA05E98725B93B0F00428637 /* Main.storyboard */,
 				FAAD99EA25B9926800FD3643 /* ResultViewController.swift */,
 				FAAD99E725B986C000FD3643 /* FirstCell.swift */,
 				FA05E98A25B93B1100428637 /* Assets.xcassets */,
