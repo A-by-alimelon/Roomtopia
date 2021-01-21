@@ -14,6 +14,7 @@
 		FA05E98B25B93B1100428637 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA05E98A25B93B1100428637 /* Assets.xcassets */; };
 		FA05E98E25B93B1100428637 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA05E98C25B93B1100428637 /* LaunchScreen.storyboard */; };
 		FA05E99825B940DA00428637 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA05E99725B940DA00428637 /* Question.swift */; };
+		FA05E99B25B9520D00428637 /* QuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA05E99A25B9520D00428637 /* QuestionCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		FA05E98D25B93B1100428637 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA05E98F25B93B1100428637 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA05E99725B940DA00428637 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		FA05E99A25B9520D00428637 /* QuestionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				FA05E98125B93B0F00428637 /* AppDelegate.swift */,
 				FA05E98325B93B0F00428637 /* SceneDelegate.swift */,
 				FA05E98525B93B0F00428637 /* ViewController.swift */,
+				FA05E99A25B9520D00428637 /* QuestionCell.swift */,
 				FA05E99725B940DA00428637 /* Question.swift */,
 				FA05E98725B93B0F00428637 /* Main.storyboard */,
 				FA05E98A25B93B1100428637 /* Assets.xcassets */,
@@ -144,6 +147,7 @@
 				FA05E99825B940DA00428637 /* Question.swift in Sources */,
 				FA05E98225B93B0F00428637 /* AppDelegate.swift in Sources */,
 				FA05E98425B93B0F00428637 /* SceneDelegate.swift in Sources */,
+				FA05E99B25B9520D00428637 /* QuestionCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

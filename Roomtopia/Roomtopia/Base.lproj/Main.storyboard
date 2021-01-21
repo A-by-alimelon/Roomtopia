@@ -23,14 +23,14 @@
                                 <rect key="frame" x="0.0" y="97" width="414" height="765"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="154" id="NL3-oZ-gw3">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="154" id="NL3-oZ-gw3" customClass="QuestionCell" customModule="Roomtopia" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="154"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NL3-oZ-gw3" id="cH9-1W-NmZ">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="154"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wOc-XZ-rp2">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wOc-XZ-rp2" userLabel="QuestionLabel">
                                                     <rect key="frame" x="28" y="27" width="358" height="0.0"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                     <nil key="textColor"/>
@@ -50,6 +50,10 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="0Ud-CN-swc" secondAttribute="trailing" constant="8" id="nDx-lg-os4"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="answerStackView" destination="0Ud-CN-swc" id="Wix-XN-tYb"/>
+                                            <outlet property="questionLabel" destination="wOc-XZ-rp2" id="5ZR-4M-ldO"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
