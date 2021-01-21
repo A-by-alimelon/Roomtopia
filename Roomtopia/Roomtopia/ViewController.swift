@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate {
+class ViewController: UIViewController {
     
     @IBOutlet weak var surveyTableView: UITableView!
     let items = [Question("방에 사람들이 가득찬 경우, 방의 중앙보다는 벽 가까이에 자리합니다."), Question("방에 사람들이 가득찬 경우, 방의 중앙보다는 벽 가까이에 자리합니다."),Question("방에 사람들이 가득찬 경우, 방의 중앙보다는 벽 가까이에 자리합니다.")]
@@ -16,6 +16,7 @@ class ViewController: UIViewController, UITableViewDelegate {
         super.viewDidLoad()
         surveyTableView.delegate = self
         surveyTableView.dataSource = self
+        surveyTableView.allowsSelection = false
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -27,6 +28,12 @@ class ViewController: UIViewController, UITableViewDelegate {
     
 }
 
+extension ViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+}
+
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
@@ -36,7 +43,7 @@ extension ViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "QuestionCell", for: indexPath) as? QuestionCell else { return UITableViewCell() }
     
         cell.configureQuestionLabel(text: items[indexPath.row].text)
-//        cell.configureAnswerButtom()
+        cell.configureButtons()
         
         return cell
     }

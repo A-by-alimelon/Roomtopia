@@ -45,22 +45,27 @@
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TAG-no-KlM">
                                                             <rect key="frame" x="0.0" y="0.0" width="71.5" height="60"/>
                                                             <state key="normal" title="Button" image="1"/>
+                                                            <state key="selected" image="1-1"/>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bjS-kL-Mbe">
+                                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bjS-kL-Mbe">
                                                             <rect key="frame" x="71.5" y="0.0" width="71.5" height="60"/>
                                                             <state key="normal" title="Button" image="2"/>
+                                                            <state key="selected" image="2-2"/>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4RZ-iW-Hc8">
+                                                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4RZ-iW-Hc8">
                                                             <rect key="frame" x="143" y="0.0" width="72" height="60"/>
                                                             <state key="normal" title="Button" image="3"/>
+                                                            <state key="selected" image="3-3"/>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sta-P1-H5b">
+                                                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sta-P1-H5b">
                                                             <rect key="frame" x="215" y="0.0" width="71.5" height="60"/>
                                                             <state key="normal" title="Button" image="4"/>
+                                                            <state key="selected" image="4-4"/>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QPN-jG-x6A">
+                                                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QPN-jG-x6A">
                                                             <rect key="frame" x="286.5" y="0.0" width="71.5" height="60"/>
                                                             <state key="normal" title="Button" image="5"/>
+                                                            <state key="selected" image="5-5"/>
                                                         </button>
                                                     </subviews>
                                                     <constraints>
@@ -97,6 +102,11 @@
                                         <connections>
                                             <outlet property="answerStackView" destination="wcH-QP-vzM" id="Iw1-rB-oWl"/>
                                             <outlet property="questionLabel" destination="wOc-XZ-rp2" id="5ZR-4M-ldO"/>
+                                            <outletCollection property="answerButtons" destination="TAG-no-KlM" collectionClass="NSMutableArray" id="K6M-wY-qkE"/>
+                                            <outletCollection property="answerButtons" destination="bjS-kL-Mbe" collectionClass="NSMutableArray" id="Nza-uG-2cE"/>
+                                            <outletCollection property="answerButtons" destination="4RZ-iW-Hc8" collectionClass="NSMutableArray" id="xno-Kn-cJ6"/>
+                                            <outletCollection property="answerButtons" destination="sta-P1-H5b" collectionClass="NSMutableArray" id="ghi-oK-p8X"/>
+                                            <outletCollection property="answerButtons" destination="QPN-jG-x6A" collectionClass="NSMutableArray" id="02G-mi-vhN"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -159,10 +169,15 @@
     </scenes>
     <resources>
         <image name="1" width="987" height="881"/>
+        <image name="1-1" width="987" height="881"/>
         <image name="2" width="986" height="881"/>
+        <image name="2-2" width="986" height="881"/>
         <image name="3" width="987" height="881"/>
+        <image name="3-3" width="987" height="881"/>
         <image name="4" width="987" height="881"/>
+        <image name="4-4" width="987" height="881"/>
         <image name="5" width="987" height="881"/>
+        <image name="5-5" width="987" height="881"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
