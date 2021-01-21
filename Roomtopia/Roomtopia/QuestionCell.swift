@@ -19,9 +19,12 @@ class QuestionCell: UITableViewCell {
         questionLabel.text = text
     }
     
-    func configureButtons() {
+    func configureButtons(score: Int) {
         for i in 0..<answerButtons.count {
             answerButtons[i].addTarget(self, action: #selector(buttonTapped(button:)), for: .touchUpInside)
+            if score == i + 1 {
+                answerButtons[i].isSelected = true
+            }
         }
     }
     
@@ -31,6 +34,23 @@ class QuestionCell: UITableViewCell {
         }
         button.isSelected = !button.isSelected
         
+        let sendData = [getIndexPath()!, button.tag + 1] as [Any]
+        NotificationCenter.default.post(name: .changeAnswer, object: sendData)
+        
     }
 
+    func getIndexPath() -> IndexPath? {
+        guard let superView = self.superview as? UITableView else {
+            return nil
+        }
+        let indexPath = superView.indexPath(for: self)
+        return indexPath
+    }
+    
+    override func prepareForReuse() {
+        answerButtons.forEach {
+            $0.isSelected = false
+        }
+    }
+    
 }

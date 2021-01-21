@@ -19,8 +19,17 @@ class ViewController: UIViewController {
         surveyTableView.dataSource = self
         surveyTableView.allowsSelection = false
         configureFooter()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(changeQuestionAnswer), name: .changeAnswer, object: nil)
     }
     
+    
+    @objc func changeQuestionAnswer(_ notification: Notification) {
+        guard let getValue = notification.object as? [Any] else { return }
+        let indexPath = getValue[0] as! IndexPath, score = getValue[1] as! Int
+        
+        items[indexPath.row - 1].answer = score
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -81,9 +90,11 @@ extension ViewController: UITableViewDataSource {
             return firstCell
         }
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "QuestionCell", for: indexPath) as? QuestionCell else { return UITableViewCell() }
+        let question = items[indexPath.row - 1]
         
-        cell.configureQuestionLabel(text: items[indexPath.row - 1].text)
-        cell.configureButtons()
+        cell.configureQuestionLabel(text: question.text)
+        print("question.answer: \(question.answer)")
+        cell.configureButtons(score: question.answer)
         
         return cell
     }

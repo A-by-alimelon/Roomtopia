@@ -17,6 +17,7 @@
 		FA05E99B25B9520D00428637 /* QuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA05E99A25B9520D00428637 /* QuestionCell.swift */; };
 		FAAD99E825B986C000FD3643 /* FirstCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAD99E725B986C000FD3643 /* FirstCell.swift */; };
 		FAAD99EB25B9926800FD3643 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAD99EA25B9926800FD3643 /* ResultViewController.swift */; };
+		FAAF73B725B9BDAA00374E94 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAF73B625B9BDAA00374E94 /* Notification.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		FA05E99A25B9520D00428637 /* QuestionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCell.swift; sourceTree = "<group>"; };
 		FAAD99E725B986C000FD3643 /* FirstCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstCell.swift; sourceTree = "<group>"; };
 		FAAD99EA25B9926800FD3643 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		FAAF73B625B9BDAA00374E94 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 				FAAD99EA25B9926800FD3643 /* ResultViewController.swift */,
 				FAAD99E725B986C000FD3643 /* FirstCell.swift */,
 				FA05E98A25B93B1100428637 /* Assets.xcassets */,
+				FAAF73B625B9BDAA00374E94 /* Notification.swift */,
 				FA05E98C25B93B1100428637 /* LaunchScreen.storyboard */,
 				FA05E98F25B93B1100428637 /* Info.plist */,
 			);
@@ -153,6 +156,7 @@
 				FA05E99825B940DA00428637 /* Question.swift in Sources */,
 				FA05E98225B93B0F00428637 /* AppDelegate.swift in Sources */,
 				FAAD99EB25B9926800FD3643 /* ResultViewController.swift in Sources */,
+				FAAF73B725B9BDAA00374E94 /* Notification.swift in Sources */,
 				FA05E98425B93B0F00428637 /* SceneDelegate.swift in Sources */,
 				FA05E99B25B9520D00428637 /* QuestionCell.swift in Sources */,
 				FAAD99E825B986C000FD3643 /* FirstCell.swift in Sources */,
