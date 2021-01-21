@@ -42,6 +42,13 @@ class ViewController: UIViewController {
         NotificationCenter.default.removeObserver(self)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let img = UIImage(named: "대지6")
+
+        navigationController?.navigationBar.setBackgroundImage(img, for: .default)
+        
+    }
     
     @objc func changeQuestionAnswer(_ notification: Notification) {
         guard let getValue = notification.object as? [Any] else { return }
@@ -54,12 +61,27 @@ class ViewController: UIViewController {
         items[indexPath.row - 1].answer = score
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        let img = UIImage(named: "대지6")
-
-        navigationController?.navigationBar.setBackgroundImage(img, for: .default)
+    func postData(score: [Int], vc: ResultViewController) {
+        let data = ["num" : score]
+        let jsonData = try? JSONSerialization.data(withJSONObject: data)
+        var request = URLRequest(url: URL(string: "http://13.59.190.39:5000")!)
+        request.httpMethod = "POST"
+        request.httpBody = jsonData
         
+        request.addValue("application/json", forHTTPHeaderField: "Content-type")
+        
+        let task = URLSession(configuration: .default).dataTask(with: request) { (data, response, error) in
+            guard error == nil else { return }
+            
+            DispatchQueue.main.async { [weak self] in
+                let outputString = String(data: data!, encoding: String.Encoding.utf8)
+                print("결과 : \(outputString)")
+                vc.imageNumber = Int(outputString!)
+                self?.navigationController?.pushViewController(vc, animated: true)
+                
+            }
+        }
+        task.resume()
     }
     
     func configureFooter() {
@@ -88,14 +110,15 @@ class ViewController: UIViewController {
     @objc func tapButton() {
         if count == 10 {
             
-            guard let pushVC = storyboard?.instantiateViewController(identifier: "ResultViewController") else { return }
+            guard let pushVC = storyboard?.instantiateViewController(identifier: "ResultViewController") as? ResultViewController else { return }
             
             var scores = [Int]()
             items.forEach {
                 scores.append(5 - $0.answer + 1)
             }
             print(scores)
-            navigationController?.pushViewController(pushVC, animated: true)
+            postData(score: scores, vc: pushVC)
+            
         }
         
     }

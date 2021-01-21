@@ -9,6 +9,7 @@ import UIKit
 
 class ResultViewController: UIViewController {
     
+    var imageNumber: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,6 +17,7 @@ class ResultViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
        // navigationItem.setHidesBackButton(true, animated: false)
+        print(imageNumber)
     }
 
 }
