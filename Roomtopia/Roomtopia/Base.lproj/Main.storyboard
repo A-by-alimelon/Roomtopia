@@ -203,7 +203,7 @@
                                                     <constraint firstAttribute="height" constant="290" id="LEo-CE-Yq4"/>
                                                 </constraints>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="감성적인마이너설" translatesAutoresizingMaskIntoConstraints="NO" id="B38-2H-Mya" userLabel="설명">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="감성적마이너설" translatesAutoresizingMaskIntoConstraints="NO" id="B38-2H-Mya" userLabel="설명">
                                                 <rect key="frame" x="0.0" y="360" width="390" height="550"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="550" id="Kxp-5d-V7f"/>
@@ -273,7 +273,7 @@
         <image name="5" width="987" height="881"/>
         <image name="5-5" width="987" height="881"/>
         <image name="감성적마이너" width="3946" height="2447"/>
-        <image name="감성적인마이너설" width="3251" height="4763"/>
+        <image name="감성적마이너설" width="3251" height="4763"/>
         <image name="설명" width="3251" height="3796"/>
         <image name="소통즐기는타이틀" width="3251" height="413"/>
         <systemColor name="systemBackgroundColor">
