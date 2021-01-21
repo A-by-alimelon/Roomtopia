@@ -10,6 +10,10 @@ import Foundation
 class Question {
     var text: String = ""
     var answer: Answer?
+    
+    init(_ text: String) {
+        self.text = text
+    }
 }
 
 
