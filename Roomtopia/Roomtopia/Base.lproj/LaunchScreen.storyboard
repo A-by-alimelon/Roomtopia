@@ -21,7 +21,7 @@
                                 <color key="textColor" red="0.10980392160000001" green="0.1843137255" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="대지 80" translatesAutoresizingMaskIntoConstraints="NO" id="Sxx-kE-GLs">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="작은시작로고 2" translatesAutoresizingMaskIntoConstraints="NO" id="Sxx-kE-GLs">
                                 <rect key="frame" x="75" y="246" width="240" height="240"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="KF6-ye-F4b"/>
@@ -45,6 +45,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="대지 80" width="738" height="823"/>
+        <image name="작은시작로고 2" width="1406" height="1397"/>
     </resources>
 </document>

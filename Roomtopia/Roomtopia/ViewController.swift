@@ -38,6 +38,7 @@ class ViewController: UIViewController {
         progress.completedUnitCount = 0
         progressLabel.text = "0%"
         NotificationCenter.default.addObserver(self, selector: #selector(changeQuestionAnswer), name: .changeAnswer, object: nil)
+        print() 
     }
     
     override func viewWillDisappear(_ animated: Bool) {
